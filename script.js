@@ -1,3 +1,6 @@
+// script.js
+import { PALAVRAS_RUINS } from './palavrasRuins.js';
+
 const botaoMostraPalavras = document.querySelector("#botao-palavrachave");
 botaoMostraPalavras.addEventListener("click", mostraPalavrasChave);
 
@@ -31,11 +34,5 @@ function contaFrequencias(palavras) {
 }
 
 function tiraPalavrasRuins(palavras) {
-  const PALAVRAS_RUINS = new Set([
-    "para", "uma", "nós", "com", "dos", "das", "nos", "às", "que", "por", "está", "isso", "esta",
-    "mas", "então", "ainda", "como", "onde", "quando", "qual", "eles", "elas", "você", "vós",
-    "também", "muito", "ser", "tem", "tenho", "tinha", "fui", "foi", "são", "sou", "era", "vai"
-  ]);
-
   return palavras.filter(p => p.length > 2 && !PALAVRAS_RUINS.has(p));
 }
